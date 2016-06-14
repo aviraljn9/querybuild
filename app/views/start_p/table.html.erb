@@ -1,0 +1,104 @@
+ 	<h1 class="selector" style="text-align: center">  Build query </h1>
+
+<div class="container" style="padding:15px;">
+  <div class="col-lg-8 col-lg-push-2">
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <div id="builder"></div>
+    <form action="/start_p/select_table2" method="get">
+      <input type="hidden" name="ID" value="default">
+      <input type="hidden" name="columns" value=<%= @columns.join(",") %> >
+      <input type="hidden" name="sql" value="def" >
+      <button class="btn btn-primary parse-json">Apply        </button>
+      <!-- <input type="submit" name="submit" value="Submit"> -->
+    </form>
+
+    <script>
+    <% if @xyz %>
+    var json_a= <%= @qwe.to_json.html_safe %>;
+    // var rules_basic= JSON.parse(json_a);
+    <% end %>
+
+    var options= {
+
+      plugins: ['bt-tooltip-errors'],
+      allow_empty: true,
+      filters: [
+      <% @columns.each do |c| %>
+      {
+        id: '<%= c %>',
+        label: '<%= c %>',
+        type: 'string',
+        default_value: '',
+        size: 30,
+        unique: true
+      },
+      <% end %>
+       
+      ],
+      <% if @xyz %>
+        rules: json_a,
+      <% end %>
+    };
+  $('#builder').queryBuilder(options);
+  $ ('.parse-json').on('click', function(){
+    // console.log(JSON.stringify($('#builder').queryBuilder('getRules'),undefined,2));
+    var abc= JSON.stringify($('#builder').queryBuilder('getRules'),undefined,2);
+    var sql_query=$('#builder').queryBuilder('getSQL',false).sql;
+    document.forms[0].elements["ID"].value = abc;
+    document.forms[0].elements["sql"].value = sql_query;
+
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: "/start_p/result",
+    //     data: {data_value: abc}
+    //     // success: function (response) 
+    //     // {
+    //     //   window.location.href = "/start_p/result2";
+    //     // }
+    //     // contentType: "application/json",
+    //     // complete: callback
+    //     // success: function (response) {
+    //     //     window.location.href = "/master/m_id_master/m_id_parties?notice=Successfully deleted!";
+    //     // },
+    //     // error: function (response) {
+    //     //     json_response = jQuery.parseJSON(response.responseText);
+    //     //     var error_message = json_response.error;
+    //     //     $("#global-message").attr("class", "msg error").empty().append('Error: ' + error_message);
+    //     // }
+    // });
+      // window.location.href = "/";
+
+    });
+</script>
+  </div>
+</div>
+
+ <% if @sql %>
+<h2 style="text-align: center"> Results </h2>
+
+<p>
+  <%= @sql %> 
+</p>
+<div>
+  <table>
+    <div>
+    <tr>
+      <th style="text-align: center">c1</th><th style="text-align: center">c2</th><th style="text-align: center">c3</th><th style="text-align: center">c4</th>
+    </tr>
+    </div>
+    <div>
+    <tr>
+      <td>d1</td><td>d2</td><td>d3</td><td>d4</td>
+    </tr>
+    </div>
+    <div>
+    <tr>
+      <td>d1</td><td>d2</td><td>d3</td><td>d4</td>
+    </tr>
+    </div>
+  </table>
+  <br>
+</div>
+ <% end %>

@@ -1,0 +1,11 @@
+/home/aviral.j/.rvm/rubies/ruby-2.2.4/bin/ruby -r ./siteconf20160610-8943-1kr7wnn.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20160610-8943-hnuj6s

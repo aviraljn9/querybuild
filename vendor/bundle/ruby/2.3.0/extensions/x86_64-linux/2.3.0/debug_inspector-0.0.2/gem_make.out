@@ -1,0 +1,15 @@
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/home/aviral.j/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160609-13386-1yvfo7o.rb extconf.rb
+creating Makefile
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20160609-13386-1wjhqbr

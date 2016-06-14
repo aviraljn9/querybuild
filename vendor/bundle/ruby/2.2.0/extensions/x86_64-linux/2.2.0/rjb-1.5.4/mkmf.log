@@ -1,0 +1,176 @@
+have_header: checking for jni.h... -------------------- yes
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <jni.h>
+/* end */
+
+--------------------
+
+have_func: checking for locale_charset() in iconv.h... -------------------- no
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15:57: error: ‘locale_charset’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))locale_charset; return 0; }
+                                                         ^
+conftest.c:15:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:15:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))locale_charset; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))locale_charset; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15:1: warning: implicit declaration of function ‘locale_charset’ [-Wimplicit-function-declaration]
+ int t(void) { locale_charset(); return 0; }
+ ^
+/tmp/ccjoXxn5.o: In function `t':
+/home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.2.0/gems/rjb-1.5.4/ext/conftest.c:15: undefined reference to `locale_charset'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { locale_charset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for nl_langinfo() in langinfo.h... -------------------- yes
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))nl_langinfo; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <langinfo.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))nl_langinfo; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for setlocale() in locale.h... -------------------- yes
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))setlocale; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <locale.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))setlocale; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getenv()... -------------------- yes
+
+"gcc -o conftest -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/x86_64-linux -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0/ruby/backward -I/home/aviral.j/.rvm/rubies/ruby-2.2.4/include/ruby-2.2.0 -I. -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux"     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC -I"/usr/lib/jvm/java-7-openjdk-amd64/include" -I"/usr/lib/jvm/java-7-openjdk-amd64/include/linux" conftest.c  -L. -L/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -Wl,-R/home/aviral.j/.rvm/rubies/ruby-2.2.4/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))getenv; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))getenv; return 0; }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_JNI_H 1
+4: #define HAVE_NL_LANGINFO 1
+5: #define HAVE_SETLOCALE 1
+6: #define HAVE_GETENV 1
+7: #define RJB_RUBY_VERSION_CODE 224
+8: #endif
+/* end */
+

@@ -1,0 +1,22 @@
+
+
+<h1 class="selector" style="text-align: center">  RO Store </h1>
+
+<form action="/start_p/select_table" method="get" class="search line form-validate" onclick="">
+<div class="searchContainer line" style="height: 180px" align="center">
+
+  <div class="selector">
+    Please select Table
+  </div>
+
+  <% @types = ["T1","T2","T3"] %>
+  <%= select "read_store", "table_name", @types,
+             {:include_blank => "Select Table"},
+             {:style => "width:250px;", :required => true} %>
+
+
+  <span><%= submit_tag "Submit", { :class => "ui-submit",
+                                   :style => "height:31px; width:120px"}%></span>
+
+</div>
+</form>

@@ -1,0 +1,49 @@
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/rjb-1.5.4/ext
+/home/aviral.j/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160609-4665-zy9h19.rb extconf.rb
+checking for jni.h... yes
+checking for locale_charset() in iconv.h... no
+checking for nl_langinfo() in langinfo.h... yes
+checking for setlocale() in locale.h... yes
+checking for getenv()... yes
+creating extconf.h
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/rjb-1.5.4/mkmf.log
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/rjb-1.5.4/ext
+make "DESTDIR=" clean
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/rjb-1.5.4/ext
+make "DESTDIR="
+mkdir -p ../data/rjb/jp/co/infoseek/hp/arton/rjb
+javac -d ../data/rjb RBridge.java
+javah -classpath ../data/rjb jp.co.infoseek.hp.arton.rjb.RBridge
+compiling load.c
+load.c: In function ‘load_bridge’:
+load.c:296:21: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+     nmethod[0].name = "call";
+                     ^
+load.c:297:26: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+     nmethod[0].signature = "(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;";
+                          ^
+load.c: In function ‘rjb_create_jvm’:
+load.c:319:7: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+       { "-Xrs", NULL },
+       ^
+load.c:326:7: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+       { "DUMMY", NULL },   /* for classpath count */
+       ^
+compiling rjb.c
+compiling rjbexception.c
+rjbexception.c: In function ‘rjb_check_exception’:
+rjbexception.c:143:19: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+       char* msg = "unknown exception";
+                   ^
+compiling riconv.c
+linking shared-object rjbcore.so
+
+current directory: /home/aviral.j/Desktop/fk/ruby/querybuild/vendor/bundle/ruby/2.3.0/gems/rjb-1.5.4/ext
+make "DESTDIR=" install
+/usr/bin/install -m 0755 rjbcore.so ./.gem.20160609-4665-1r173z

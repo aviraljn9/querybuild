@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+  .selector {
+      font-family: 'Helvetica Neue';
+      font-size: 25px;
+      padding-top: 50px;
+      padding-bottom: 15px;
+      color: #777777;
+  }
+  table 
+  {
+    width:100%;
+    border: 1px solid black;
+    border-collapse: separate;
+    /*border-spacing: 5px;*/
+  }
+  th
+  {
+    /*width:100%;*/
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-spacing: 5px;
+  }
+  td
+  {
+    /*width:100%;*/
+    text-align: center;
+    border: 1px solid black;
+    border-spacing: 5px;
+  }
+</style>
+
+<head>
+  <title>Querybuild</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <style>
+  #qunit-modulefilter-container { float:none; }
+  #blanket-main { font-size:14px !important; }
+  </style>
+
+
+
+<!-- qunit:imports -->
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
